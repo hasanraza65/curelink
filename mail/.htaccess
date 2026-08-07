@@ -1,0 +1,39 @@
+# Only send.php is reachable over the web.
+#
+# config.php holds the mailbox password and Smtp.php is an internal library;
+# neither should ever be fetchable, and on a misconfigured host a request for a
+# .php file can return its source instead of executing it.
+
+<FilesMatch "\.(php|inc)$">
+    Require all denied
+</FilesMatch>
+
+<Files "send.php">
+    Require all granted
+</Files>
+
+# selftest.php is allowed through because it is the only way to find out *why*
+# a send failed on a host with no terminal access — the form can only ever say
+# "could not send". It refuses to run without ?key=<secret>, and it should be
+# deleted once the mailbox is confirmed working.
+<Files "selftest.php">
+    Require all granted
+</Files>
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+    <FilesMatch "\.(php|inc)$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+    <Files "send.php">
+        Order allow,deny
+        Allow from all
+    </Files>
+    <Files "selftest.php">
+        Order allow,deny
+        Allow from all
+    </Files>
+</IfModule>
+
+Options -Indexes

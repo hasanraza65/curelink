@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f2f6fa"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dfe7ef"/><stop offset="1" stop-color="#c7d4e0"/>
+    </linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#0a3350" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- a stack of bleached board sheets, seen at a shallow angle -->
+  <g filter="url(#sh)">
+    <!-- lower sheets, offset to read as a ream -->
+    <g>
+      <path d="M210 792 L600 700 L990 792 L600 884 Z" fill="#dbe4ee"/>
+      <path d="M210 792 L210 812 L600 904 L600 884 Z" fill="#c3d1de"/>
+      <path d="M990 792 L990 812 L600 904 L600 884 Z" fill="#b6c6d5"/>
+    </g>
+    <g transform="translate(0,-46)">
+      <path d="M210 792 L600 700 L990 792 L600 884 Z" fill="#e6edf4"/>
+      <path d="M210 792 L210 812 L600 904 L600 884 Z" fill="#cbd8e4"/>
+      <path d="M990 792 L990 812 L600 904 L600 884 Z" fill="#bdcbd9"/>
+    </g>
+    <g transform="translate(0,-92)">
+      <path d="M210 792 L600 700 L990 792 L600 884 Z" fill="#eff4f9"/>
+      <path d="M210 792 L210 812 L600 904 L600 884 Z" fill="#d5e0ea"/>
+      <path d="M990 792 L990 812 L600 904 L600 884 Z" fill="#c6d3df"/>
+    </g>
+    <!-- top sheet, lifted, showing the bright coated face -->
+    <g transform="translate(0,-150)">
+      <path d="M210 792 L600 700 L990 792 L600 884 Z" fill="url(#face)"/>
+      <path d="M210 792 L210 806 L600 898 L600 884 Z" fill="url(#edge)"/>
+      <path d="M990 792 L990 806 L600 898 L600 884 Z" fill="#bccadb"/>
+    </g>
+  </g>
+
+  <!-- dimension marks: sheet size is how this product is ordered -->
+  <g stroke="#0A5B96" stroke-width="4" fill="none" opacity="0.72">
+    <path d="M214 560 L596 470"/>
+    <path d="M214 552 L214 568"/>
+    <path d="M596 462 L596 478"/>
+    <path d="M604 470 L986 560"/>
+    <path d="M604 462 L604 478"/>
+    <path d="M986 552 L986 568"/>
+  </g>
+  <g font-family="'Plus Jakarta Sans','Segoe UI',sans-serif" font-weight="700" fill="#0A5B96" font-size="42" text-anchor="middle">
+    <text x="405" y="502">31&#8221;</text>
+    <text x="795" y="502">43&#8221;</text>
+  </g>
+  <g font-family="'Plus Jakarta Sans','Segoe UI',sans-serif" font-weight="800" fill="#124a72" font-size="46" text-anchor="middle" opacity="0.9">
+    <text x="600" y="352">BLEACH CARD</text>
+  </g>
+  <g font-family="'Plus Jakarta Sans','Segoe UI',sans-serif" font-weight="600" fill="#5b7386" font-size="34" text-anchor="middle">
+    <text x="600" y="404">300 &#8211; 350 g/m&#178; coated board</text>
+  </g>
+</svg>
