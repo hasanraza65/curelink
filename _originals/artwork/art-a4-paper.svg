@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#fbfdfe"/>
+      <stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d5e2ea"/>
+      <stop offset="1" stop-color="#b9cdd9"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8f0f5"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#0A5B96"/>
+      <stop offset="1" stop-color="#1B7FC4"/>
+    </linearGradient>
+    <linearGradient id="bandSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#084A79"/>
+      <stop offset="1" stop-color="#06395D"/>
+    </linearGradient>
+    <linearGradient id="sheet" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f2f7fa"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#0d2233" stop-opacity="0.34"/>
+      <stop offset="0.6" stop-color="#0d2233" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0d2233" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- grounding shadow -->
+  <ellipse cx="600" cy="1010" rx="330" ry="52" fill="url(#shadow)"/>
+
+  <!-- loose sheets fanned behind the ream -->
+  <g transform="rotate(-7 620 640)">
+    <rect x="700" y="300" width="300" height="424" rx="6" fill="#eaf1f6" stroke="#cddbe5" stroke-width="2"/>
+    <rect x="676" y="286" width="300" height="424" rx="6" fill="#f3f8fb" stroke="#d5e2ea" stroke-width="2"/>
+    <rect x="652" y="272" width="300" height="424" rx="6" fill="url(#sheet)" stroke="#dbe6ee" stroke-width="2"/>
+  </g>
+
+  <!-- the ream: axonometric box, front + top + right side -->
+  <g transform="rotate(-3 560 660)">
+    <!-- top face -->
+    <path d="M250 372 L360 300 L806 348 L696 420 Z" fill="url(#top)" stroke="#cfdde6" stroke-width="2" stroke-linejoin="round"/>
+    <!-- right side face -->
+    <path d="M696 420 L806 348 L806 902 L696 974 Z" fill="url(#side)" stroke="#a9c0cf" stroke-width="2" stroke-linejoin="round"/>
+    <!-- front face -->
+    <path d="M250 372 L696 420 L696 974 L250 926 Z" fill="url(#front)" stroke="#cfdde6" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- wrapper band across the front -->
+    <path d="M250 486 L696 534 L696 654 L250 606 Z" fill="url(#band)"/>
+    <path d="M696 534 L806 462 L806 582 L696 654 Z" fill="url(#bandSide)"/>
+
+    <!-- A4 wordmark on the band -->
+    <text x="300" y="600" font-family="Verdana, DejaVu Sans, sans-serif" font-size="104"
+          font-weight="700" fill="#ffffff" letter-spacing="2" transform="rotate(6.1 300 600)">A4</text>
+    <text x="470" y="586" font-family="Verdana, DejaVu Sans, sans-serif" font-size="27"
+          font-weight="700" fill="#8ed0f5" letter-spacing="3" transform="rotate(6.1 470 586)">COPY</text>
+    <text x="470" y="622" font-family="Verdana, DejaVu Sans, sans-serif" font-size="27"
+          font-weight="700" fill="#8ed0f5" letter-spacing="3" transform="rotate(6.1 470 622)">PAPER</text>
+
+    <!-- green rule + specification lines under the band -->
+    <path d="M250 682 L696 730 L696 742 L250 694 Z" fill="#00A651"/>
+    <text x="292" y="800" font-family="Verdana, DejaVu Sans, sans-serif" font-size="36"
+          font-weight="700" fill="#12304a" letter-spacing="1" transform="rotate(6.1 292 800)">500 SHEETS</text>
+    <text x="292" y="852" font-family="Verdana, DejaVu Sans, sans-serif" font-size="26"
+          fill="#4b667c" letter-spacing="1" transform="rotate(6.1 292 852)">210 × 297 mm</text>
+
+    <!-- paper-edge striations on the side face, so it reads as stacked sheets -->
+    <g stroke="#9db4c4" stroke-width="1.6" opacity="0.55">
+      <path d="M700 700 L802 634"/><path d="M700 726 L802 660"/><path d="M700 752 L802 686"/>
+      <path d="M700 778 L802 712"/><path d="M700 804 L802 738"/><path d="M700 830 L802 764"/>
+      <path d="M700 856 L802 790"/><path d="M700 882 L802 816"/><path d="M700 908 L802 842"/>
+      <path d="M700 934 L802 868"/>
+    </g>
+    <g stroke="#9db4c4" stroke-width="1.6" opacity="0.4">
+      <path d="M700 440 L802 374"/><path d="M700 462 L802 396"/>
+    </g>
+
+    <!-- highlight along the top-front edge -->
+    <path d="M252 374 L694 422" stroke="#ffffff" stroke-width="3" opacity="0.9"/>
+  </g>
+</svg>
